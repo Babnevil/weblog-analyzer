@@ -5,6 +5,11 @@ import java.util.Calendar;
  * web-server log file.
  * Individual fields are made available via
  * accessors such as getHour() and getMinute().
+ * Modified to also include methods to return day
+ * month and year data. 
+ * 
+ * @author Matthew Schilling
+ * @version 2017.11.13
  * 
  * @author David J. Barnes and Michael Kölling.
  * @version    2016.02.29
@@ -80,7 +85,26 @@ public class LogEntry implements Comparable<LogEntry>
     {
         return dataValues[MINUTE];
     }
-    
+    /**
+     * Return the day.
+     * @return The day field from the log line.
+     */
+    public int getDay(){
+        return dataValues[DAY];
+    }
+    /**
+     * Return the month.
+     * @return The month field from the log line.
+     */
+    public int getMonth(){
+        return dataValues[MONTH];
+    }/**
+     * Return the year.
+     * @return The year field from the log line.
+     */
+    public int getYear(){
+        return dataValues[YEAR];
+    }
     /**
      * Create a string representation of the data.
      * This is not necessarily identical with the
